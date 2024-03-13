@@ -9,6 +9,6 @@ embeddings_dataset = load_dataset("Matthijs/cmu-arctic-xvectors", split="validat
 speaker_embedding = torch.tensor(embeddings_dataset[7306]["xvector"]).unsqueeze(0)
 # You can replace this embedding with your own as well.
 
-speech = synthesiser("Hello, a kutyám menőbb nálad!", forward_params={"speaker_embeddings": speaker_embedding})
+speech = synthesiser("Hello, a kutyám menőbb nálad, hogy vagy én nagyon jól vagyok köszi!", forward_params={"speaker_embeddings": speaker_embedding})
 
 sf.write("speech.wav", speech["audio"], samplerate=speech["sampling_rate"])
